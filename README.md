@@ -7,7 +7,7 @@ Track Santa
 
 
 ### Project Description
-This uses open notify's API to track the position of the ISS across the globe, but uses an image of Santa.
+This uses open notify's API to track the position of the I.S.S. across the globe, but uses an image of Santa.
 
 
 ### Credits

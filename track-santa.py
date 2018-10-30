@@ -2,52 +2,52 @@ import requests
 import json
 import turtle
 
-iss = turtle.Turtle()
+santa = turtle.Turtle()
 
 
 def setup(window):
-    global iss
+    global santa
 
     window.setup(1000, 500)
     window.bgpic('earth.gif')
     window.setworldcoordinates(-180, -90, 180, 90)
 
-    turtle.register_shape('iss.gif')
-    iss.shape('iss.gif')
+    turtle.register_shape('santa.gif')
+    santa.shape('santa.gif')
 
 
-def move_iss(lat, long):
-    global iss
+def move_santa(lat, long):
+    global santa
 
-    iss.penup()
-    iss.goto(long, lat)
-    iss.pendown()
+    santa.penup()
+    santa.goto(long, lat)
+    santa.pendown()
 
 
-def track_iss():
+def track_santa():
 
     url = "http://api.open-notify.org/iss-now.json"
     response = requests.get(url)
-
+    
     if response.status_code == 200:
-        iss_info = json.loads(response.text)
-        iss_position = iss_info["iss_position"]
-        iss_lat = float(iss_position['latitude'])
-        iss_lon = float(iss_position['longitude'])
-        move_iss(iss_lat, iss_lon)
+        santa_info = json.loads(response.text)
+        santa_position = santa_info["iss_position"]
+        santa_lat = float(santa_position['latitude'])
+        santa_lon = float(santa_position['longitude'])
+        move_santa(santa_lat, santa_lon)
     else:
-        print("Houston, we have a problem:", response.status_code)
+        print("North Pole, we have a problem:", response.status_code)
 
     widget = turtle.getcanvas()
-    widget.after(5000, track_iss)
+    widget.after(5000, track_santa)
 
 
 def main():
-    global iss
+    global santa
 
     screen = turtle.Screen()
     setup(screen)
-    track_iss()
+    track_santa()
 
 
 if __name__ == '__main__':
