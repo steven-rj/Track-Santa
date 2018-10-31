@@ -2,10 +2,14 @@ import requests
 import json
 import turtle
 
+#create the Santa turtle object
 santa = turtle.Turtle()
 
 
 def setup(window):
+    """
+    DOCSTRING: creates the main window for the program
+    """
     global santa
 
     window.setup(1000, 500)
@@ -17,6 +21,9 @@ def setup(window):
 
 
 def move_santa(lat, long):
+    """
+    DOCSTRING: moves the Santa object to the given coordinates
+    """
     global santa
 
     santa.penup()
@@ -25,6 +32,14 @@ def move_santa(lat, long):
 
 
 def track_santa():
+    """
+    DOCSTRING: using open-notify's API, gets a JSON
+               containing the ISS's position, and
+               stores its latitude and longitude
+               in respective vars.
+               also prints error message if no response
+               is received from the server.                
+    """
 
     url = "http://api.open-notify.org/iss-now.json"
     response = requests.get(url)
@@ -43,6 +58,9 @@ def track_santa():
 
 
 def main():
+    """
+    DOCSTRING: main function of the program
+    """
     global santa
 
     screen = turtle.Screen()
