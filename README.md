@@ -11,4 +11,4 @@ This uses open notify's API to track the position of the I.S.S. across the globe
 
 
 ### Credits
-This is a project is based off a project found in the book Head First: Learn to Code
+I made some modifications to a project found in the book Head First: Learn to Code
