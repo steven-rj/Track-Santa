@@ -1,9 +1,9 @@
-#import statements
+# import statements
 import requests
 import json
 import turtle
 
-#create the Santa turtle object
+# create the Santa turtle object
 santa = turtle.Turtle()
 
 
